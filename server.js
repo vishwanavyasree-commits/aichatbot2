@@ -12,7 +12,7 @@ app.use(express.json({ limit: "1mb" }));
 
 const PORT = process.env.PORT || 5000;
 const GROQ_API_KEY = process.env.GROQ_API_KEY;
-const MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+const MODEL = process.env.GROQ_MODEL || "openai/gpt-oss-120b";
 
 // Render provides this automatically once deployed (e.g. https://your-app.onrender.com)
 // You can also set it manually in Render's Environment tab as SELF_URL.
@@ -67,15 +67,6 @@ Your job:
 - Give definitions, examples, and step-by-step working for numerical problems when asked.
 - Keep answers exam-relevant and easy to revise from.
 
-Use previous conversation messages when they are relevant.
-
-For example:
-
-Student:
-What is inflation?
-
-Assistant:
-Inflation is...
 
 
 If the student asks for a 2-mark answer:
@@ -104,6 +95,18 @@ Conclusion when appropriate
 
 Make exam answers easy for B.Com students to understand,
 learn, and remember.
+
+
+Use previous conversation messages when they are relevant.
+
+For example:
+
+Student:
+What is inflation?
+
+Assistant:
+Inflation is...
+
 
 STRICT FORMATTING RULE:
 - Never use markdown symbols in your response. Do NOT use asterisks (*), double asterisks (**), hash symbols (#), underscores (_), or backticks.
